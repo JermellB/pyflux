@@ -91,7 +91,8 @@ class LatentVariables(object):
         None (changes priors in LatentVariables object)
         """   
 
-        def rec(dim, prev=[]):
+        def rec(dim, prev=None):
+           prev = [] if prev is None else prev
            if len(dim) > 0:
                return [rec(dim[1:], prev + [i]) for i in range(dim[0])]
            else:

@@ -19,14 +19,6 @@ Note: this script does not check any of the dependent C libraries; it only
 operates on the Cython .pyx files or their corresponding Cython header (.pxd)
 files.
 """
-# Author: Arthur Mensch <arthur.mensch@inria.fr>
-# Author: Raghav R V <rvraghav93@gmail.com>
-#
-# License: BSD 3 clause
-# see http://github.com/scikit-learn/scikit-learn
-
-
-from __future__ import division, print_function, absolute_import
 
 import os
 import re

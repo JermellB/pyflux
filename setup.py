@@ -3,6 +3,7 @@ import os
 import re
 import sys
 import subprocess
+from security import safe_command
 
 # Use of SETUP built-in adapted from scikit-learn's setup structure.
 
@@ -39,7 +40,7 @@ def generate_cython(package):
     """Cythonize all sources in the package"""
     cwd = os.path.abspath(os.path.dirname(__file__))
     print("Cythonizing sources")
-    p = subprocess.call([sys.executable,
+    p = safe_command.run(subprocess.call, [sys.executable,
                          os.path.join(cwd, 'tools', 'cythonize.py'),
                          package],
                         cwd=cwd)
